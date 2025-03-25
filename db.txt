@@ -1,0 +1,25 @@
+#crear db08
+
+CREATE TABLE clientes (
+    id UUID PRIMARY KEY,
+    apellidos VARCHAR(100) NOT NULL,
+    nombres VARCHAR(100) NOT NULL,
+    dni VARCHAR(9) NOT NULL,
+    correo VARCHAR(100) NOT NULL,
+    telefono VARCHAR(9) NOT NULL,
+    activo BOOLEAN DEFAULT TRUE,
+    fecha_creacion TIMESTAMP NOT NULL,
+    fecha_actualizacion TIMESTAMP NOT NULL
+);
+
+INSERT INTO clientes (id, apellidos, nombres, dni, correo, telefono, activo, fecha_creacion, fecha_actualizacion) VALUES
+('550e8400-e29b-41d4-a716-666666000001', 'García', 'Juan', 12345678, 'juan.garcia@example.com', 612345678, TRUE, NOW(), NOW()),
+('550e8400-e29b-41d4-a716-666666000002', 'Pérez', 'María', 23456789, 'maria.perez@example.com', 623456789, TRUE, NOW(), NOW()),
+('550e8400-e29b-41d4-a716-666666000003', 'López', 'Carlos', 34567890, 'carlos.lopez@example.com', 634567890, TRUE, NOW(), NOW()),
+('550e8400-e29b-41d4-a716-666666000004', 'Martínez', 'Ana', 45678901, 'ana.martinez@example.com', 645678901, TRUE, NOW(), NOW()),
+('550e8400-e29b-41d4-a716-666666000005', 'Hernández', 'Luis', 56789012, 'luis.hernandez@example.com', 656789012, TRUE, NOW(), NOW()),
+('550e8400-e29b-41d4-a716-666666000006', 'González', 'Laura', 67890123, 'laura.gonzalez@example.com', 667890123, TRUE, NOW(), NOW()),
+('550e8400-e29b-41d4-a716-666666000007', 'Rodríguez', 'Pedro', 78901234, 'pedro.rodriguez@example.com', 678901234, TRUE, NOW(), NOW()),
+('550e8400-e29b-41d4-a716-666666000008', 'Fernández', 'Sofía', 89012345, 'sofia.fernandez@example.com', 689012345, TRUE, NOW(), NOW()),
+('550e8400-e29b-41d4-a716-666666000009', 'Ramírez', 'Javier', 90123456, 'javier.ramirez@example.com', 690123456, TRUE, NOW(), NOW()),
+('550e8400-e29b-41d4-a716-666666000010', 'Toledo', 'Marta', 93116480, 'marta.toledo@example.com', 696134587, TRUE, NOW(), NOW());
