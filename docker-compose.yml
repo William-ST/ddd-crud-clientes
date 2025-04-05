@@ -7,7 +7,7 @@ services:
     ports:
       - "5002:5002"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5433/db08
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/db08
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
       SERVER_PORT: 5002
