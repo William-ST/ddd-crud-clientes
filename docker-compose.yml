@@ -7,7 +7,7 @@ services:
     ports:
       - "5002:5002"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/db08
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5433/db08
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
       SERVER_PORT: 5002
@@ -22,7 +22,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Monta el script de inicialización
