@@ -5,7 +5,6 @@ import com.example.clientesapi.application.usecase.DeleteClienteUseCase;
 import com.example.clientesapi.application.usecase.GetClienteUseCase;
 import com.example.clientesapi.application.usecase.UpdateClienteUseCase;
 import com.example.clientesapi.domain.model.Cliente;
-import com.example.clientesapi.domain.model.Cliente;
 import com.example.clientesapi.infrastructure.persistence.mapper.ClienteMapper;
 import com.example.clientesapi.infrastructure.rest.dto.*;
 import jakarta.validation.Valid;

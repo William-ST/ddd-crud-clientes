@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  app:
+    image: williamst/ddd-springboot-demoapp:latest
+    container_name: app-ddd
+    ports:
+      - "5002:5002"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/db08
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SERVER_PORT: 5002
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: postgres:15
+    container_name: postgres_db_ddd
+    environment:
+      POSTGRES_DB: db08
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Monta el script de inicialización
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres", "-d", "db08" ]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
+
+volumes:
+  postgres_data:
